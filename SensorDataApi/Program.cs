@@ -6,6 +6,7 @@ using SensorDataApi.BackgroundServices;
 using SensorDataApi.Data;
 using SensorDataApi.Data.Repositories;
 using SensorDataApi.Data.SeedData;
+using SensorDataApi.Data.UnitOfWork;
 using SensorDataApi.Middlewares;
 using SensorDataApi.Services;
 
@@ -21,6 +22,8 @@ builder.Services.AddScoped<ILightSensorRepository, LightSensorRepository>();
 builder.Services.AddScoped<ILightSensorService, LightSensorService>();
 builder.Services.AddScoped<ITempSensorRepository, TempSensorRepository>();
 builder.Services.AddScoped<ITempSensorService, TempSensorService>();
+
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 //builder.Services.AddScoped<DbInitializer>();//Use that to initialize data to test get method
 

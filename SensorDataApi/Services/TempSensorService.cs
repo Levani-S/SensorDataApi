@@ -1,4 +1,5 @@
 ﻿using SensorDataApi.Data.Repositories;
+using SensorDataApi.Data.UnitOfWork;
 using SensorDataApi.Exceptions;
 using SensorDataApi.Models;
 using SensorDataApi.ViewModels;
@@ -7,12 +8,14 @@ namespace SensorDataApi.Services
 {
     public class TempSensorService : ITempSensorService
     {
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ITempSensorRepository _tempSensorRepository;
         private readonly ILogger<TempSensorService> _logger;
 
-        public TempSensorService(ITempSensorRepository tempSensorRepository, ILogger<TempSensorService> logger)
+        public TempSensorService(IUnitOfWork unitOfWork, ILogger<TempSensorService> logger)
         {
-            _tempSensorRepository = tempSensorRepository;
+            _unitOfWork = unitOfWork;
+            _tempSensorRepository = _unitOfWork.TempSensors;
             _logger = logger;
         }
 
