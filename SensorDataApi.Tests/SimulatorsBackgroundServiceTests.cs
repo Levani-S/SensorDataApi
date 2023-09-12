@@ -26,7 +26,7 @@ namespace SensorDataApi.Tests
 
             var mockHttpClient = new Mock<HttpClient>();
 
-            // Mock the logger instances if they are null
+            // logger instances if they are null
             if (logger == null)
             {
                 var loggerMock = new Mock<ILogger<SimulatorsBackgroundService>>();

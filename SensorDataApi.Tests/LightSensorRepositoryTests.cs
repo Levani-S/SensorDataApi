@@ -15,12 +15,12 @@ namespace SensorDataApi.Tests
         [SetUp]
         public void Setup()
         {
-            // Create a mock for DbContextOptions
+            //  mock for DbContextOptions
             var options = new DbContextOptionsBuilder<SensorDataDbContext>()
                 .UseInMemoryDatabase(databaseName: "LightSensorDatabase")
                 .Options;
 
-            // Create a mock DbContext and Logger
+            //  mock DbContext and Logger
             _dbContext = new SensorDataDbContext(options);
             _logger = new Mock<ILogger<LightSensorRepository>>().Object;
 
@@ -39,7 +39,6 @@ namespace SensorDataApi.Tests
             // Arrange
             var deviceId = 1;
 
-            // Add some sample LightSensor data to the in-memory database
             var testData = new List<LightSensor>
             {
                 new LightSensor { Illuminance = 1000.0, Time = DateTimeOffset.UtcNow.ToUnixTimeSeconds(), DeviceId = deviceId },

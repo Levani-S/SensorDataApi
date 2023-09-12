@@ -86,7 +86,6 @@
             var lightSensorRepositoryMock = new Mock<ILightSensorRepository>();
             var loggerMock = new Mock<ILogger<LightSensorService>>();
 
-            // Mock the behavior of your repository to throw an exception
             lightSensorRepositoryMock.Setup(repo =>
                 repo.GetMaxIlluminanceForLastThirtyDaysAsync(It.IsAny<long>()))
                 .ThrowsAsync(new Exception("Simulated repository exception"));

@@ -54,7 +54,7 @@ namespace SensorDataApi.Simulators
                         };
                         telemetryData.Add(telemetry);
 
-                        await Task.Delay(TimeSpan.FromMinutes(0.1));
+                        await Task.Delay(TimeSpan.FromMinutes(15));
                     }
 
                     await PostTelemetryData(telemetryData);

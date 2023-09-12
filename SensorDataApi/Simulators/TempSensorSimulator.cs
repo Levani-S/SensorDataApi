@@ -54,7 +54,7 @@ namespace SensorDataApi.Simulators
                         };
                         tempData.Add(temp);
 
-                        await Task.Delay(TimeSpan.FromMinutes(0.1));
+                        await Task.Delay(TimeSpan.FromMinutes(15));
                     }
 
                     await PostTemperatureData(tempData);

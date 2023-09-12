@@ -100,7 +100,7 @@
             var tempSensorRepositoryMock = new Mock<ITempSensorRepository>();
             var loggerMock = new Mock<ILogger<TempSensorService>>();
 
-            // Mock the behavior of your repository and unit of work
+
             tempSensorRepositoryMock.Setup(repo =>
                 repo.AddTempSensorDataAsync(It.IsAny<List<TempSensor>>()))
                 .ThrowsAsync(new DataInsertionException("Simulated data insertion error"));

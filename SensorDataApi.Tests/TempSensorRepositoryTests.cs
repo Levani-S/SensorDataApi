@@ -13,12 +13,12 @@ namespace SensorDataApi.Tests
         [SetUp]
         public void Setup()
         {
-            // Create a mock for DbContextOptions
+            //  mock for DbContextOptions
             var options = new DbContextOptionsBuilder<SensorDataDbContext>()
                 .UseInMemoryDatabase(databaseName: "TempSensorDatabase")
                 .Options;
 
-            // Create a mock DbContext and Logger
+            // mock DbContext and Logger
             _dbContext = new SensorDataDbContext(options);
             _logger = new Mock<ILogger<TempSensorRepository>>().Object;
 
@@ -37,7 +37,6 @@ namespace SensorDataApi.Tests
             // Arrange
             var deviceId = 1;
 
-            // Add some sample TempSensor data to the in-memory database
             var testData = new List<TempSensor>
             {
                 new TempSensor { Temperature = 25.5, Time = DateTimeOffset.UtcNow.ToUnixTimeSeconds(), DeviceId = deviceId },
