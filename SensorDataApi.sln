@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorDataApi", "SensorDataApi\SensorDataApi.csproj", "{BCF5F984-C396-43F7-ADFC-43C8D715C183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SensorDataApi", "SensorDataApi\SensorDataApi.csproj", "{BCF5F984-C396-43F7-ADFC-43C8D715C183}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorDataApi.Tests", "SensorDataApi.Tests\SensorDataApi.Tests.csproj", "{E72909A5-A7A3-48DA-8614-3C3141EC3BF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BCF5F984-C396-43F7-ADFC-43C8D715C183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCF5F984-C396-43F7-ADFC-43C8D715C183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCF5F984-C396-43F7-ADFC-43C8D715C183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E72909A5-A7A3-48DA-8614-3C3141EC3BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E72909A5-A7A3-48DA-8614-3C3141EC3BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E72909A5-A7A3-48DA-8614-3C3141EC3BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E72909A5-A7A3-48DA-8614-3C3141EC3BF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

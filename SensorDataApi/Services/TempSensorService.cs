@@ -34,6 +34,11 @@ namespace SensorDataApi.Services
 
         public async Task AddTempSensorDataAsync(List<TempSensorViewModel> tempSensorDataList)
         {
+            if (tempSensorDataList == null)
+            {
+                throw new ArgumentNullException(nameof(tempSensorDataList));
+            }
+
             try
             {
                 var sensorDataList = new List<TempSensor>();
@@ -59,5 +64,7 @@ namespace SensorDataApi.Services
                 throw new DataInsertionException("Error occurred during data insertion.");
             }
         }
+
+
     }
 }

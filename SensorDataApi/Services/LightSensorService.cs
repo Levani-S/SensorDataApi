@@ -32,8 +32,17 @@ namespace SensorDataApi.Services
             }
         }
 
-        public async Task AddLightSensorDataAsync(List<LightSensorViewModel> lightSensorDataList)
+        public async Task AddLightSensorDataAsync(List<LightSensorViewModel>? lightSensorDataList)
         {
+            if (lightSensorDataList == null)
+            {
+                throw new ArgumentNullException(nameof(lightSensorDataList));
+            }
+
+            if (lightSensorDataList.Count == 0)
+            {
+                throw new ArgumentException("lightSensorDataList cannot be empty", nameof(lightSensorDataList));
+            }
             try
             {
                 var sensorDataList = new List<LightSensor>();
@@ -59,5 +68,6 @@ namespace SensorDataApi.Services
                 throw new DataInsertionException("Error occurred during data insertion.");
             }
         }
+
     }
 }

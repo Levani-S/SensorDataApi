@@ -56,8 +56,15 @@ namespace SensorDataApi.Data.Repositories
         {
             try
             {
-                _dbContext.LightSensor.AddRange(lightSensorDataList);
-                await _dbContext.SaveChangesAsync();
+                if (lightSensorDataList != null)
+                {
+                    _dbContext.LightSensor.AddRange(lightSensorDataList);
+                    await _dbContext.SaveChangesAsync();
+                }
+                else
+                {
+                    throw new ArgumentNullException(nameof(lightSensorDataList), "Light Sensor data is null");
+                }
             }
             catch (Exception ex)
             {
